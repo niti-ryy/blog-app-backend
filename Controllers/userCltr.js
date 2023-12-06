@@ -73,6 +73,19 @@ userCltr.profile=async(req,res)=>{
     }
 }
 
+userCltr.profileUpdate=async(req,res)=>{
+    const {body}=req
+    const {id}=req.user
+    try{
+        const updateUser=await User.findByIdAndUpdate({_id:id},body,{new:true})
+        res.json(updateUser)
+    }catch(e){
+        res.status(500).json({
+            message:e.message
+        })
+    }
+}
 
+0
 
 module.exports=userCltr
