@@ -83,6 +83,19 @@ postCltr.deletePost=async(req,res)=>{
     }
 }
 
+postCltr.authorPosts=async(req,res)=>{
+    const {id}=req.user
+    console.log(req.user)
+    try{
+        const post=await Post.find({author:id})
+        res.json(post)
+    }catch(e){
+        res.status(500).json({
+            message:e.message
+        })  
+    }
+    
+}
 
 
 //this is combinationn of both with id and all the posts

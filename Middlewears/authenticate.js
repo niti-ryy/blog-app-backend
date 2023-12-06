@@ -17,6 +17,7 @@ const authenticate = async (req, res, next) => {
       id: tokenData.id,
       email: tokenData.email,
     }
+    
     next()
   } catch (e) {
     // Use a switch statement to handle different error cases
