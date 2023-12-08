@@ -8,6 +8,7 @@ const userCltr = require("./Controllers/userCltr")
 const configDb = require("./ConfigDb/Configdb")
 const authenticate = require("./Middlewears/authenticate")
 const postCltr = require("./Controllers/postCltr")
+const commentCtrl = require("./Controllers/commentCltr")
 configDb()
 
 /*-------------------------------------------------------------------------------- */
@@ -27,7 +28,8 @@ app.get("/api/posts/myposts",authenticate,postCltr.authorPosts)
 
 /*-------------------------------------------------------------------------------- */
 
-
+app.post("/api/posts/:postId/comments",authenticate,commentCtrl.create)
+app.get("/api/posts/:postId/comments",commentCtrl.getComments)
 app.listen(Port,()=>{
     console.log("backend connected successfully"+" "+Port)
 })

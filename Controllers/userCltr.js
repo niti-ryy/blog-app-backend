@@ -86,6 +86,6 @@ userCltr.profileUpdate=async(req,res)=>{
     }
 }
 
-0
+
 
 module.exports=userCltr

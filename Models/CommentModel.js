@@ -15,4 +15,7 @@ const commentsSchema=new Schema({
 
 })
 
-const CommentModel=model("CommentModel",commentsSchema)
+const CommentModel=model("Comment",commentsSchema)
+
+module.exports=CommentModel
+
