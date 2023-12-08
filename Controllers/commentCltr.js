@@ -37,7 +37,7 @@ commentCtrl.getComments=async(req,res)=>{
     }
 }
 
-commentCtrl.updateComment=async(req,res)=>{
+commentCtrl.updateComment=async(req,res)=>{   //update comment
     const {postId,commentId}=req.params
     const {body}=req
     try{
